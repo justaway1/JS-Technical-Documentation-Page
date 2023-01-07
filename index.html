@@ -119,3 +119,40 @@
             <code class='code'>if (true) { let y = 5; } console.log(y); // ReferenceError: y is
      not defined</code>
           </section>
+          <section class='main-section' id='Global_variables'>
+            <header id='Global_variables'>Global variables</header>
+            <p>Global variables are in fact properties of the global object. In web pages the global object is window, so you can set and access global variables using the window.variable syntax.</p>
+            <p>Consequently, you can access global variables declared in one window or frame from another window or frame by specifying the window or frame name. For example, if a variable called phoneNumber is declared in a document, you can refer to this variable from an iframe as parent.phoneNumber.</p>
+          </section>
+          <section class='main-section' id='Constants'>
+            <header id='Constants'>Constants</header>
+       <p>You can create a read-only, named constant with the const keyword. The syntax of a constant identifier is the same as for a variable identifier: it must start with a letter, underscore or dollar sign and can contain alphabetic, numeric, or underscore characters.</p>
+       <code class='code'>const PI = 3.14;
+     </code>
+       <p>A constant cannot change value through assignment or be re-declared while the script is running. It has to be initialized to a value.</p>
+     
+     <p>The scope rules for constants are the same as those for let block scope variables. If the const keyword is omitted, the identifier is assumed to represent a variable.</p>
+     
+     <p>You cannot declare a constant with the same name as a function or variable in the same scope. For example:</p>
+       <code class='code'>// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
+     WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+     //statements }</code>
+       <p>However, object attributes are not protected, so the following statement is executed without problems.</p>
+       <code class='code'>const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+     "otherValue";</code>
+            </section>
+            <section class='main-section' id='Data_types'>
+            <header id='Data_types'>Data types</header>
+            <p>The latest ECMAScript standard defines seven data types:</p>
+            <p class='data-type'>Six data types that are primitives:</p>
+            <ul>
+              <li>Boolean. true and false.</li>
+              <li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+              <li>undefined. A top-level property whose value is undefined.</li>
+              <li>Number. 42 or 3.14159.</li>
+              <li>String. "Howdy"</li>
+              <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+            </ul>
+              <p>and Object</p>
+              <p>Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.</p>
+            </section>
